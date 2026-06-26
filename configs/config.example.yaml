@@ -1,0 +1,50 @@
+# Craowl Configuration Example
+
+# General Settings
+log_level: info
+timeout: 30s
+max_retries: 3
+
+# Concurrency Settings
+concurrency:
+  max_workers: 10
+  browser_workers: 3
+  api_workers: 7
+
+# Rate Limiting
+rate_limit:
+  enabled: true
+  requests_per_second: 10
+
+# Storage Configuration
+storage:
+  type: postgres
+  postgres:
+    host: localhost
+    port: 5432
+    database: craowl
+    user: craowl
+    password: ${DB_PASSWORD}
+
+# Cache Configuration
+cache:
+  type: redis
+  redis:
+    host: localhost
+    port: 6379
+    ttl: 3600
+
+# Proxy Configuration
+proxy:
+  enabled: false
+  url: ""
+  rotation: false
+
+# Platform Specific Settings
+platforms:
+  shopee:
+    enabled: true
+    base_url: https://shopee.co.id
+    rate_limit: 100
+    timeout: 30s
+    user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36"
