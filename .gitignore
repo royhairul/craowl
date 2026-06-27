@@ -27,3 +27,7 @@ skills-lock.json
 
 # Environment variables
 .env
+
+# Ignore all results except README
+results/*
+!results/README.md
